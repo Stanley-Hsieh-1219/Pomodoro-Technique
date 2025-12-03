@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄鐘 - Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sakura-bg"></div>
+
+        <div class="timer-card">
+            <h1 class="title">🍅 番茄鐘タイマー</h1>
+
+            <div class="datetime-display">
+                <div id="current-date"></div>
+                <div id="current-time"></div>
+            </div>
+
+            <div class="timer-display" id="timer-display">15:00</div>
+
+            <div class="time-buttons">
+                <button class="time-btn" data-time="5">5分</button>
+                <button class="time-btn" data-time="10">10分</button>
+                <button class="time-btn active" data-time="15">15分</button>
+                <button class="time-btn" data-time="20">20分</button>
+                <button class="time-btn" data-time="30">30分</button>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn start-btn" id="start-btn">開始</button>
+                <button class="control-btn pause-btn" id="pause-btn">暫停</button>
+                <button class="control-btn reset-btn" id="reset-btn">重置</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

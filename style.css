@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 櫻花背景效果 */
+.sakura-bg::before,
+.sakura-bg::after {
+    content: '🌸';
+    position: absolute;
+    font-size: 2rem;
+    animation: float 15s infinite ease-in-out;
+    opacity: 0.3;
+}
+
+.sakura-bg::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sakura-bg::after {
+    top: 20%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.timer-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.5s ease-out;
+    border: 3px solid #ff6b9d;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    text-align: center;
+    color: #ff6b9d;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.datetime-display {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#current-date {
+    font-size: 1.1rem;
+    color: #5a5a5a;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#current-time {
+    font-size: 1.5rem;
+    color: #ff6b9d;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-display {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin: 30px 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    font-variant-numeric: tabular-nums;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+                     0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+                     0 0 40px rgba(102, 126, 234, 0.6);
+    }
+}
+
+.time-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.time-btn {
+    flex: 1;
+    padding: 12px 8px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.time-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.time-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.control-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans TC', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.start-btn {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(17, 153, 142, 0.4);
+}
+
+.pause-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.pause-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(240, 147, 251, 0.4);
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 100%;
+    transition: width 1s linear;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* 響應式設計 */
+@media (max-width: 480px) {
+    .timer-card {
+        padding: 30px 20px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .timer-display {
+        font-size: 3.5rem;
+    }
+
+    .time-buttons {
+        gap: 5px;
+    }
+
+    .time-btn {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+
+    .control-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
